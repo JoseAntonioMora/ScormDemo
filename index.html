@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hola Mundo Wordpress</title>
+	<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+	<script type="text/javascript">
+
+	var scorm = pipwerks.SCORM;
+
+	function init(){
+		scorm.version = "1.2";
+		Mensaje("Iniciando el Curso.");
+		var callSucceeded = scorm.init();
+		Mensaje("Curso iniciado correctamente? " + callSucceeded);
+	}
+
+	function CompletarCurso(){
+		Mensaje("Marcando curso como Completado.");
+		var callSucceeded = scorm.set("cmi.core.lesson_status", "completed");
+		Mensaje("Curso Completado? " + callSucceeded);
+	}
+
+	function ObtenerNombre(){
+		var nombreUser = scorm.get("cmi.core.student_name");
+		document.getElementById('Nombre').innerHTML = '<b>' + nombreUser + '</b>';
+	}
+
+	function end(){
+		Mensaje("Conexion terminada.");
+		var callSucceeded = scorm.quit();
+		Mensaje("Termino correctamente? " +callSucceeded);
+	}
+
+	function Mensaje(msg){
+		alert(msg);
+	}
+
+	window.onload = function (){
+		init();
+	}
+
+	window.onunload = function (){
+		end();
+	}
+
+	</script>
+</head>
+<body>
+	<h2>Primera conexión a la plataforma LMS</h2>
+	<br><br>
+	<input type="button" onclick="ObtenerNombre()" value="Obtener Nombre">
+	<input type="button" onclick="CompletarCurso()" value="Completar Curso">
+	<div id="Nombre"></div>
+
+</body>
+</html>
