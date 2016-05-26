@@ -8,6 +8,6 @@ Written by Jose Antonio Mora.
 
 Visit my wordpress for more information http://jantoniomora.wordpress.com
 
-Contact me: antoniomora@raptorsarts.com.mx
+Contact me: antoniomora@raptorsarts.com.mx or visit our web http://www.raptorsarts.com.mx
 
 ![RaptorsArts Corp](http://www.raptorsarts.com.mx/06.jpg)   
